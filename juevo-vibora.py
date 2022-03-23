@@ -4,6 +4,7 @@ Exercises
 2. Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes entre sí, pero al azar, de una serie de 5 diferentes colores, excepto el rojo.
 """
 
+from contextlib import redirect_stderr
 from random import randrange
 from turtle import *
 
@@ -24,6 +25,22 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
+def comparar(comparador):
+    if comparador==1:
+        color= "blue"
+    elif comparador==2:
+        color= "green"
+    elif comparador==3:
+        color = "pink"
+    elif comparador==4:
+        color= "orange"
+    elif comparador==5:
+        color = "purple" 
+    return color
+    
+def elegirColor(opcion):
+        color= comparar(opcion)
+        return color
 
 def move():
     """Move snake forward one segment."""
@@ -49,16 +66,22 @@ def move():
             food.y = 0 #Fruta aparece en y 0
     else:
         snake.pop(0)
-
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
-
-    square(food.x, food.y, 9, 'green')
+        square(body.x, body.y, 9, color_snake)
+    square(food.x, food.y, 9, color_comida)
     update()
     ontimer(move, 100)
 
+#Definir el color de la serpiente
+while 1==1:
+    comparador_snake=randrange(1,5)
+    comparador_comida=randrange(1,5)
+    if comparador_snake != comparador_comida:
+        break
+color_snake=elegirColor(comparador_snake)
+color_comida=elegirColor(comparador_comida)
 
 setup(420, 420, 370, 0)
 hideturtle()
