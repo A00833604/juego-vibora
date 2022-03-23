@@ -25,6 +25,22 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
+def comparar(comparador):
+    if comparador==1:
+        color= "blue"
+    elif comparador==2:
+        color= "green"
+    elif comparador==3:
+        color = "pink"
+    elif comparador==4:
+        color= "orange"
+    elif comparador==5:
+        color = "purple" 
+    return color
+    
+def elegirColor(opcion):
+        color= comparar(opcion)
+        return color
 
 def move():
     """Move snake forward one segment."""
