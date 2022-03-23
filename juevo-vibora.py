@@ -1,6 +1,6 @@
 """Snake, classic arcade game.
 Exercises
-1. La comida podrá moverse al azar un paso a la vez y no deberá de salirse de la ventana.
+1.La comida podrá moverse al azar un paso a la vez y no deberá de salirse de la ventana.
 2. Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes entre sí, pero al azar, de una serie de 5 diferentes colores, excepto el rojo.
 """
 
@@ -39,9 +39,11 @@ def move():
 
     if head == food:
         print('Snake:', len(snake))
-        if (-200 < food.x < 190 and -200 < food.y < 190): #Checa si la fruta se encuentra dentro de la paantalla
-            food.x = randrange(-1, 1) * 10 #Posicion x
-            food.y = randrange(-1, 1) * 10 #Posicion y
+
+        if (-200 < food.x < 190 and -200 < food.y < 190): #Checa si la fruta se encuentra dentro de la pantalla
+            food.x = randrange(-1, 1) * 10 #Frutas se mueve de 1 espacio en X
+            food.y = randrange(-1, 1) * 10 #Frutas se mueve de 1 espacio en y
+            
         else: #Si la fruta se encuentra fuera de la pantalla
             food.x = 0 #Fruta aparece en x 0
             food.y = 0 #Fruta aparece en y 0
