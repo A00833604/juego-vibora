@@ -41,8 +41,8 @@ def move():
         print('Snake:', len(snake))
 
         if (-200 < food.x < 190 and -200 < food.y < 190): #Checa si la fruta se encuentra dentro de la pantalla
-            food.x = randrange(-15, 15) * 10
-            food.y = randrange(-15, 15) * 10
+            food.x = randrange(-5, 5) * 10
+            food.y = randrange(-5, 5) * 10
             
         else: #Si la fruta se encuentra fuera de la pantalla
             food.x = 0 #Fruta aparece en x 0
